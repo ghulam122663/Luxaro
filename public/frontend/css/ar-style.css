@@ -1,0 +1,415 @@
+.project-categories h2{
+	color: #fff;
+	font-size: 30px;
+	margin-bottom: 15px;
+  font-weight: 600;
+ 
+}
+
+.project-categories p {
+	color: #fff;
+	text-transform: capitalize;
+}
+
+.agriculture {
+	background: #fff;
+	height: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.agriculture p {
+	text-align: center;
+	color: #0009;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.agriculture-banners {
+	background-color: #123033;
+	padding: 40px 0px;
+}
+
+.goldevine-work h2 {
+	color: #123033;
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.goldevine-work p {
+	color: #BAB3BC;
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.founder-heading h3 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #123033;
+}
+
+.funder-image {
+    width: 50px;
+}
+
+.path-founder {
+	width: 230px;
+	margin: 0px auto;
+}
+
+.explore-projects {
+	background: #123033;
+}
+
+.explore-projects h2 {
+	color: #fff;
+	font-size: 35px;
+	font-weight: 600;
+}
+
+.gold-meta-guild-image {
+	width: 300px;
+}
+
+.gold-meta-subheading h3 {
+	font-size: 35px;
+	color: #123033;
+	font-weight: 600;
+  text-align: center;
+}
+
+.gold-meta-section {
+	background-color: #5ce78c;
+}
+
+.gold-meta-hold h3 {
+	font-size: 25px;
+	font-weight: bold;
+  text-align: center;
+}
+
+.gold {
+	color: #e7d689;
+}
+
+.crowdfunding-section {
+	background-color: #123033;
+}
+
+.crowdfunding-text h4 {
+	font-size: 45px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+.crowdfunding-text-2 h6 {
+	font-size: 25px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.crowdfunding-btn {
+	background-color: #5ce78c;
+	border: 1px solid #5ce78c;
+}
+
+
+.agriculture-banners .slick-next {
+    right: 25px;
+}
+
+.agriculture-banners .slick-prev {
+    left: 25px;
+}
+
+.goldevine-card .card {
+	position: relative;
+	background-color: #123033;
+	color: #fff;
+	border: 0;
+	-webkit-box-shadow: 0px 0px 10px 4px rgba(169,169,169,1);
+	-moz-box-shadow: 0px 0px 10px 4px rgba(169,169,169,1);
+	box-shadow: 0px 0px 10px 4px rgba(169,169,169,1);
+	margin: 0px auto;
+	display: inline-block;
+
+}
+
+.goldevine-card-image {
+	position: relative;
+		 width: 100%;
+  max-width: 400px;
+}
+
+.goldevine-card .card img {
+display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.goldevine-card-image:hover .overlay {
+  opacity: 1;
+}
+
+.icon {
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  -ms-transform: translate(-50%, -25%);
+  text-align: center;
+}
+
+a.goldevine-icon > i {
+	background: #5ce78c;
+	color: #fff;
+	padding: 8px;
+	border-radius: 5px;
+  margin: 1px;
+}
+
+.goldevine-card a {
+	opacity: 1 ;
+}
+
+a.goldevine-icon > i:hover {
+	background-color: #fff;
+	color: #5ce78c;
+}
+
+.goldevine-card p {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+@media only screen and (min-width: 991.98px) {
+		.project-categories h2{
+			font-size: 45px;
+		   margin-bottom: 22px;
+}
+}
+
+@media only screen and (min-width: 1198.98px) {
+.agriculture-banners .slick-prev, .slick-next {
+    width: 35px;
+    height: 35px;
+}
+
+.agriculture-banners .slick-next {
+    right: -46px;
+}
+
+.agriculture-banners .slick-prev {
+    left: -46px;
+}
+}
+
+
+.wrap-parent-slider .wrap {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 0 60px;
+  /*background: url('https://t3.ftcdn.net/jpg/01/91/95/30/360_F_191953033_gehQATeDoh5z6PyRDbeKyBZuS83CjMEF.jpg') center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;*/
+  overflow: hidden;
+}
+
+.wrap-parent-slider .wrap:after {
+  content:'';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+/*  background: rgba(0,0,0,.5);*/
+}
+
+.wrap-parent-slider .slider-wrap {
+  position: relative;
+  z-index: 200;
+  padding: 0 0px;
+  margin: 0rem auto 4rem;
+ max-width: 1200px;
+  width: 100%;
+}
+
+.wrap-parent-slider .slick-list {
+	padding: 0 !important;
+}
+
+.wrap-parent-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: -25px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-family: monospace;
+  font-size: 5rem;
+  z-index: 300;
+  outline: none;
+}
+
+.wrap-parent-slider .slick-prev {
+  left: -50px;
+  text-align: left;
+}
+
+.wrap-parent-slider .slick-next {
+  right: -50px;
+  text-align: right;
+}
+
+
+
+.wrap-parent-slider .item.slick-slide {
+  width: 400px;
+  height: 400px !important;
+  transition: transform .4s;
+  position: relative; 
+}
+
+.wrap-parent-slider .slick-slide:after {
+  content:'';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  transition: transform .4s;
+}
+
+.wrap-parent-slider .item.slick-slide {
+  transform: scale(0.7)  translate(640px);
+}
+
+.wrap-parent-slider .item.slick-slide.slick-center + .slick-slide {
+  transform: scale(0.8) translate(-250px);
+  z-index: 10;
+}
+
+.wrap-parent-slider .item.slick-slide.slick-center + .slick-slide + .item.slick-slide {
+  transform: scale(0.7)  translate(-640px);
+  z-index: 5;
+}
+
+.wrap-parent-slider .item.slick-slide.slick-active {
+  transform: scale(0.8) translate(250px);
+}
+
+.wrap-parent-slider .item.slick-slide.slick-center {
+
+  transform: scale(1);
+  z-index: 30;
+}
+
+.wrap-parent-slider .slick-center:after {
+  opacity: 0;
+}
+
+.card-item-text h6 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.wrap-parent-slider .item {
+	position: relative;
+}
+
+.wrap-parent-slider .card-item-text {
+	background-color: #123033;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 15px;
+}
+
+.wrap-parent-slider .slick-dots li button::before {
+  font-size: 8px;
+  color: #000;
+  opacity: 1;
+}
+
+.wrap-parent-slider .slick-dots li.slick-active button::before {
+  opacity: 1;
+  color: #5ce78c;
+  font-size: 16px;
+}
+
+.wrap-parent-slider .slick-dots li {
+	margin: 0;
+}
+
+.wrap-parent-slider .slick-dots {
+  bottom: -55px;
+  margin-bottom: 0;
+}
+
+.wrap-parent-slider .item:hover .overlay-icon .icon-bottom {
+	opacity: 1;
+}
+
+.overlay-icon .icon-bottom {
+  color: white;
+  font-size: 19px;
+  position: absolute;
+  bottom: 29%;
+  left: 50%;
+  transform: translate(-50%, -29%);
+  -ms-transform: translate(-50%, -25%);
+  text-align: center;
+  background: #123033;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 99;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+ }
+
+ .overlay-icon a {
+ 	opacity: 1;
+ }
+
+ .overlay-icon a.goldevine-icon > i {
+  background: #123033;
+  color: #fff;
+  padding: 8px 30px;
+  border-radius: 0px;
+  width: 33%;
+}
+
+.overlay-icon a.goldevine-icon > i:hover {
+	background-color: #5ce78c;
+
+}
