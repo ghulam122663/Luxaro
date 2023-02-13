@@ -6,11 +6,11 @@
                             <div class="footer-logo mb-3">
                                 <a href="javascript:void"> 
                                     @if(strpos(url()->current(),'goldEvine')) 
-                                    <img src="{{asset('frontend/images/GoldEvine-logo.png')}}" class="img-fluid">
+                                    <img src="{{static_asset('frontend/images/GoldEvine-logo.png')}}" class="img-fluid">
                                     @elseif(strpos(url()->current(),'goldMetal'))
-                                   <img src="{{asset('frontend/images/Gold-Metal-logo.png')}}" class="img-fluid">
+                                   <img src="{{static_asset('frontend/images/Gold-Metal-logo.png')}}" class="img-fluid">
                                     @else
-                                    <img src="{{asset('frontend/images/logo.png')}}" class="img-fluid">
+                                    <img src="{{static_asset('frontend/images/logo.png')}}" class="img-fluid">
                                     @endif
                                 </a>
                             </div>
@@ -28,8 +28,15 @@
                         <div class="col-12 col-md-3 mb-3">
                             <strong class="title d-block mb-4">Footer Menulist-2</strong>
                             <ul class="m-0">
+                               @auth
+                               <li><a href="{{ route('logout')}}" class="dropdown-item">
+											<!-- <i class="las la-sign-out-alt"></i> -->
+											<span>{{translate('Logout')}}</span>
+										</a></li>
+                                @else
                                 <li><a href="{{route('login')}}">Login</a></li>
                                 <li><a href="{{ route('register')}}">Register</a></li>
+                               @endauth
                             </ul>
                         </div>
                         <div class="col-12 col-md-3 mb-3">

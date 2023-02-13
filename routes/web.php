@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CharterManagementController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CompareController;
 use App\Http\Controllers\ConversationController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LuxaroController;
+use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PageController;
@@ -47,6 +49,7 @@ use App\Http\Controllers\Payment\PaykuController;
 use App\Http\Controllers\ProductQueryController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\AdminController;
 
 /*
   |--------------------------------------------------------------------------
@@ -58,9 +61,24 @@ use App\Http\Controllers\WishlistController;
   | contains the "web" middleware group. Now create something great!
   |
  */
+ Route::get('/faqs', [AdminController::class, 'faqs'])->name('admin.faq');
+Route::post('/saveTerms', [AdminController::class, 'saveTerms'])->name('saveTerm');
+Route::controller(CharterManagementController::class)->group(function () { 
+    Route::post('/charter_manage', 'store')->name('charter_manage');
+    Route::get('/all_charters', 'index')->name('charters');
+    Route::get('/charter_detail', 'charter_detail')->name('charter_detail');
+    Route::post('/charter_book', 'charter_book')->name('charter_book');
+    Route::get('/product_charter_management', 'productCharterManagement')->name('product_charter_management');
+});
+Route::controller(MerchantController::class)->group(function () { 
+    Route::get('/merchant_account1', 'merchantAccountFirstStep')->name('merchant_account_first_step');
+    Route::post('/merchant_account2', 'merchantAccountSecondStep')->name('merchant_account_second_step');
+    Route::post('/save_merchant_account', 'saveMerchantAccount')->name('save_merchant_account');
+});
 
 Route::controller(LuxaroController::class)->group(function () { 
-    Route::get('/', 'index')->name('home');
+     Route::get('/', 'index')->name('home');
+     Route::get('/lauxaro-products', 'lauxaro_products')->name('lauxaro_products');
     Route::get('/product-detail/{id}', 'productDetail')->name('product-detail');
     Route::get('/goldEvine', 'goldEvine')->name('goldEvine');
     Route::get('/goldMetal', 'goldEvine')->name('goldMetal');
@@ -71,14 +89,37 @@ Route::controller(LuxaroController::class)->group(function () {
     Route::get('/suite-management', 'merchantSuitManagement')->name('suite-management');
     Route::get('/payment-management', 'merchantPaymentManagement')->name('payment-management');
     Route::get('/myProfile', 'myProfile')->name('my-profile');
-    // Route::get('/sign_in', 'login')->name('sign_in');
-    // Route::get('/create_account', 'createAccount')->name('create_account');
-    Route::get('/charters', 'charters')->name('charters');
+    Route::get('/sign_in', 'login')->name('sign_in');
+    Route::get('/create_account', 'createAccount')->name('create_account');
+    // Route::get('/charters', 'charters')->name('charters');
     Route::get('/charter-detail', 'charterDetail')->name('charter-detail');
     // Route::get('/register', 'register')->name('register');
     Route::get('/contactUs', 'contactUs')->name('contactUs');
     Route::get('/aboutUs', 'aboutUs')->name('aboutUs');
     Route::get('/faqs', 'faqs')->name('faqs');
+    Route::get('/shop/{slug}', 'seller_shop')->name('shop.visit');
+    Route::get('/shop/{slug}/{type}', 'filter_shop')->name('shop.visit.type');
+    
+    // Route::get('/', 'index')->name('home');
+    // Route::get('/product-detail/{id}', 'productDetail')->name('product-detail');
+    // Route::get('/goldEvine', 'goldEvine')->name('goldEvine');
+    // Route::get('/goldMetal', 'goldEvine')->name('goldMetal');
+    // Route::get('/chats', 'chats')->name('chats');
+    // Route::post('/product_upload', 'productUpload')->name('product_upload');
+    // Route::get('/merchant-suits', 'merchantSuits')->name('merchant-suits');
+    // Route::get('/suite-management', 'merchantSuitManagement')->name('suite-management');
+    // Route::get('/payment-management', 'merchantPaymentManagement')->name('payment-management');
+    // Route::get('/myProfile', 'myProfile')->name('my-profile');
+    // Route::get('/sign_in', 'login')->name('sign_in');
+    // Route::get('/create_account', 'createAccount')->name('create_account');
+   
+    // Route::get('/charter-detail', 'charterDetail')->name('charter-detail');
+    // Route::get('/register', 'register')->name('register');
+    // Route::get('/contactUs', 'contactUs')->name('contactUs');
+    // Route::get('/aboutUs', 'aboutUs')->name('aboutUs');
+    // Route::get('/faqs', 'faqs')->name('faqs');
+    // Route::get('/shop/{slug}', 'seller_shop')->name('shop.visit');
+    // Route::get('/shop/{slug}/{type}', 'filter_shop')->name('shop.visit.type');
 });
 Route::controller(DemoController::class)->group(function () {
     Route::get('/demo/cron_1', 'cron_1');
@@ -144,8 +185,8 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::get('/product/{slug}', 'product')->name('product');
     Route::post('/product/variant_price', 'variant_price')->name('products.variant_price');
-    Route::get('/shop/{slug}', 'shop')->name('shop.visit');
-    Route::get('/shop/{slug}/{type}', 'filter_shop')->name('shop.visit.type');
+    // Route::get('/shop/{slug}', 'shop')->name('shop.visit');
+    // Route::get('/shop/{slug}/{type}', 'filter_shop')->name('shop.visit.type');
 
     Route::get('/customer-packages', 'premium_package_index')->name('customer_packages_list_show');
 

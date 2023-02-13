@@ -9,9 +9,9 @@
                          <div class="mb-3 mb-md-0">
                              <ol class="breadcrumb mb-1">
                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                 <li class="breadcrumb-item active" aria-current="page">Search Results - [Search term(s)]</li>
+                                 <li class="breadcrumb-item active" aria-current="page">All Products</li>
                              </ol>
-                             <h2>Search results - "[Search terms]"
+                             <h2>
                          </div>
                          <div class="mb-3 mb-md-0">
                              <h2 style="font-size: 20px;">Search results - #### </h2>
@@ -72,146 +72,7 @@
                                 </a>
                         </div>
                         @endforeach
-                             <div class="col-md-auto flex-fill col-12 my-2">
-                                <a href="{{route('charter-detail')}}">
-                                 <div class="product-item">
-                                     <div class="img-holder">
-                                         <img src="{{ asset('frontend/images/product-img.png')}}" class="img-fluid">
-                                     </div>
-                                     <div class="txt-holder">
-                                         <div class="d-flex justify-content-between mb-3">
-                                             <div>
-                                                 <strong class="title">Lorem Ipsum</strong>
-                                                 <ul class="list-unstyled m-0 p-0 d-flex stars">
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                 </ul>
-                                             </div>
-                                             <i class="fa fa-globe fa-1x mt-2"></i>
-                                         </div>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <strong class="title">$24.23</strong>
-                                             <a class="btn bg-dark text-white py-1 px-2" href="javascript:void"><i class="fa fa-shopping-basket"></i></a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 </a>
-                             </div>
-                             <div class="col-md-auto flex-fill col-12 my-2">
-                             <a href="{{route('charter-detail')}}">
-                                 <div class="product-item">
-                                     <div class="img-holder">
-                                         <img src="{{ asset('frontend/images/product-img.png') }}" class="img-fluid">
-                                     </div>
-                                     <div class="txt-holder">
-                                         <div class="d-flex justify-content-between mb-3">
-                                             <div>
-                                                 <strong class="title">Lorem Ipsum</strong>
-                                                 <ul class="list-unstyled m-0 p-0 d-flex stars">
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                 </ul>
-                                             </div>
-                                             <i class="fa fa-globe fa-1x mt-2"></i>
-                                         </div>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <strong class="title">$24.23</strong>
-                                             <a class="btn bg-dark text-white py-1 px-2" href="javascript:void"><i class="fa fa-shopping-basket"></i></a>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                             </div>
-                             <div class="col-md-auto flex-fill col-12 my-2">
-                             <a href="{{route('charter-detail')}}">
-                                 <div class="product-item">
-                                     <div class="img-holder">
-                                         <img src="{{ asset('frontend/images/product-img.png') }}" class="img-fluid">
-                                     </div>
-                                     <div class="txt-holder">
-                                         <div class="d-flex justify-content-between mb-3">
-                                             <div>
-                                                 <strong class="title">Lorem Ipsum</strong>
-                                                 <ul class="list-unstyled m-0 p-0 d-flex stars">
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                 </ul>
-                                             </div>
-                                             <i class="fa fa-globe fa-1x mt-2"></i>
-                                         </div>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <strong class="title">$24.23</strong>
-                                             <a class="btn bg-dark text-white py-1 px-2" href="javascript:void"><i class="fa fa-shopping-basket"></i></a>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                             </div>
-                             <div class="col-md-auto flex-fill col-12 my-2">
-                             <a href="{{route('charter-detail')}}">
-                                 <div class="product-item">
-                                     <div class="img-holder">
-                                         <img src="{{ asset('frontend/images/product-img.png') }}" class="img-fluid">
-                                     </div>
-                                     <div class="txt-holder">
-                                         <div class="d-flex justify-content-between mb-3">
-                                             <div>
-                                                 <strong class="title">Lorem Ipsum</strong>
-                                                 <ul class="list-unstyled m-0 p-0 d-flex stars">
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                 </ul>
-                                             </div>
-                                             <i class="fa fa-globe fa-1x mt-2"></i>
-                                         </div>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <strong class="title">$24.23</strong>
-                                             <a class="btn bg-dark text-white py-1 px-2" href="javascript:void"><i class="fa fa-shopping-basket"></i></a>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                             </div>
-                             <div class="col-md-auto flex-fill col-12 my-2">
-                             <a href="{{route('charter-detail')}}">
-                                 <div class="product-item">
-                                     <div class="img-holder">
-                                         <img src="{{ asset('frontend/images/product-img.png') }}" class="img-fluid">
-                                     </div>
-                                     <div class="txt-holder">
-                                         <div class="d-flex justify-content-between mb-3">
-                                             <div>
-                                                 <strong class="title">Lorem Ipsum</strong>
-                                                 <ul class="list-unstyled m-0 p-0 d-flex stars">
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                     <li class="me-1"><i class="fa fa-star"></i></li>
-                                                 </ul>
-                                             </div>
-                                             <i class="fa fa-globe fa-1x mt-2"></i>
-                                         </div>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <strong class="title">$24.23</strong>
-                                             <a class="btn bg-dark text-white py-1 px-2" href="javascript:void"><i class="fa fa-shopping-basket"></i></a>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </a>
-                             </div>
+                             
                          </div>
                          <!-- <div class="row mb-3">
                              <div class="col-md-auto flex-fill col-12 my-2">

@@ -10,8 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use App\Http\Controllers\SellerPackageController;
+use App\Http\Controllers\Api\V2\Seller\SellerPackageController;
 
 //Admin
 Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function(){

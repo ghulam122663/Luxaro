@@ -23,7 +23,7 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="nameInputEmail1" class="form-label mb-0">Name</label>
-                                        <input type="name" class="form-control " id="nameInputEmail1" aria-describedby="nameHelp">
+                                        <input type="name" class="form-control" value="{{$user->name}}" id="nameInputEmail1" aria-describedby="nameHelp">
                                         <div class="pincel"></div>
                                     </div>
                                     <div class="mb-3">
@@ -45,32 +45,44 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="nameInputEmail1" class="form-label mb-0">Email</label>
-                                        <input type="email" class="form-control " id="nameInputEmail1" aria-describedby="nameHelp">
+                                        <input type="email" class="form-control" value="{{$user->email}}" id="nameInputEmail1" aria-describedby="nameHelp">
                                         <div class="pincel"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputtagline" class="form-label mb-0">Phone</label>
-                                        <input type="text" class="form-control about-me" id="exampleInputtagline" value="xxx-xxx-xxxx">
+                                        <input type="text" class="form-control about-me" value="{{$user->phone}}" name="phone" id="exampleInputtagline">
                                         <div class="pincel"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label mb-0">Adress</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="address" value="{{$user->address}}" class="form-control">
                                         <div class="pincel"></div>
                                     </div>
                                     <div class="row gx-2 mb-0 mb-md-3">
                                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                                             <label for="" class="form-label mb-0">City</label>
-                                            <input type="text" class="form-control">
+                                            <!-- <select name="city_id"  class="form-control">
+                                            @foreach ($cities as $city)
+                                              <option value="{{$city->id}}">{{$city->name}}</option>
+                                            @endforeach
+                                            </select> -->
+                                            <select id="city-id" class="form-control">
+                                              </select>
+                                            <!-- <input type="text" class="form-control"> -->
                                             <div class="pincel"></div>
                                         </div>
                                         <div class="col-12 col-md-3 mb-3 mb-md-0">
                                             <label for="">State</label>
-                                            <select class="form-select">
-                                                <option></option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                            </select>
+                                       
+                                            <!-- @foreach ($states as $state)
+                                                 <select name="city_id" class="form-control">
+                                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    -->
+                                                    <select id="state-id" class="form-control">
+                                                   </select>
+                                           
                                         </div>
                                         <div class="col-12 col-md-3 mb-3 mb-md-0">
                                             <label for="" class="form-label mb-0">Zip Code</label>
@@ -80,11 +92,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Country</label>
-                                        <select class="form-select">
-                                            <option></option>
-                                            <option>Country 1</option>
-                                            <option>Country 2</option>
-                                        </select>
+                                        <select class="form-select"  class="form-control" name="country_id" id="country_id">
+                                            @foreach ($countries as $country)
+                                              <option value="{{$country->id}}">{{$country->name}}</option>
+                                            @endforeach
+                                            </select>
                                     </div>
                                     <div class="row gx-4 mb-0 mb-md-5 align-items-end">
                                         <div class="col-12 col-md-8 mb-3 mb-md-0">
@@ -215,4 +227,50 @@
         </div>
     </div>
 </div>
+
+<script>
+        $(document).ready(function () {
+            $('#country-id').on('change', function () {
+                var idCountry = this.value;
+                $("#state-id").html('');
+                $.ajax({
+                    url: "{{url('api/fetch-states')}}",
+                    type: "POST",
+                    data: {
+                        country_id: idCountry,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#state-id').html('<option value="">Select State</option>');
+                        $.each(result.states, function (key, value) {
+                            $("#state-id").append('<option value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                        $('#city-id').html('<option value="">Select City</option>');
+                    }
+                });
+            });
+            $('#state-id').on('change', function () {
+                var idState = this.value;
+                $("#city-id").html('');
+                $.ajax({
+                    url: "{{url('api/fetch-cities')}}",
+                    type: "POST",
+                    data: {
+                        state_id: idState,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        $('#city-id').html('<option value="">Select City</option>');
+                        $.each(res.cities, function (key, value) {
+                            $("#city-id").append('<option value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

@@ -4,19 +4,41 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Luxauro</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{static_asset('frontend/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/style.css')}}">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
-
+	
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"> -->
+    <!-- aiz core css -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-seller.css') }}">
     <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css') }}">
     <link rel="stylesheet" href="{{ static_asset('assets/css/custom-style.css') }}">
+    <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />
 	<style>
 		a { color: inherit; } 
 	</style>
+    <style>
+        .bootstrap-tagsinput .tag{
+            margin-right: 2px;
+            color: #ffffff;
+            background: #1b1b28;
+            padding: 3px 7px;
+            border-radius: 3px;
+        }
+        .bootstrap-tagsinput {
+            width: 100%;
+        }
+    </style>
+
 	    <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css') }}">
 		<script>
         var AIZ = AIZ || {};
@@ -51,19 +73,23 @@
         @include('newfrontend.footer')
     </div>
 	
-	@yield('script')
 
-	<script type="text/javascript" src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+
+	<script type="text/javascript" src="{{static_asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
+	<script type="text/javascript" src="{{static_asset('frontend/js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{static_asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<script type="text/javascript" src="{{ asset('frontend/js/custom.js') }}"></script>
-	<script src="{{ static_asset('assets/js/vendors.js') }}"></script>
+	<script type="text/javascript" src="{{ static_asset('frontend/js/custom.js') }}"></script>
+	
     <script src="{{ static_asset('assets/js/aiz-core.js') }}"></script>
+    <script src="{{ static_asset('assets/js/vendors.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+   
 	<script>
-        @foreach (session('flash_notification', collect())->toArray() as $message)
-            AIZ.plugins.notify('{{ $message['level'] }}', '{{ $message['message'] }}');
-        @endforeach
+        // @foreach (session('flash_notification', collect())->toArray() as $message)
+        //     AIZ.plugins.notify('{{ $message['level'] }}', '{{ $message['message'] }}');
+        // @endforeach
     </script>
 </body>
 </html>

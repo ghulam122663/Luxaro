@@ -24,7 +24,7 @@
                 </li>
 
                 <!-- POS Addon-->
-                <!-- @if (addon_is_activated('pos_system'))
+                 @if (addon_is_activated('pos_system'))
                     @if(Auth::user()->user_type == 'admin' || in_array('1', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -49,7 +49,7 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
                 <!-- Product -->
                 @if(Auth::user()->user_type == 'admin' || in_array('2', json_decode(Auth::user()->staff->role->permissions)))
@@ -296,7 +296,7 @@
                 @endif -->
 
                 <!-- Refund addon -->
-                <!-- @if (addon_is_activated('refund_request'))
+                 @if (addon_is_activated('refund_request'))
                     @if(Auth::user()->user_type == 'admin' || in_array('7', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -331,11 +331,11 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
 
                 <!-- Customers -->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('8', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('8', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-user-friends aiz-side-nav-icon"></i>
@@ -362,7 +362,7 @@
                             @endif
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 <!-- Sellers -->
                 @if((Auth::user()->user_type == 'admin' || in_array('9', json_decode(Auth::user()->staff->role->permissions))) && get_setting('vendor_system_activation') == 1)
@@ -416,17 +416,17 @@
                         </ul>
                     </li>
                 @endif
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('22', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('22', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="{{ route('uploaded-files.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['uploaded-files.create'])}}">
                             <i class="las la-folder-open aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Uploaded Files') }}</span>
                         </a>
                     </li>
-                @endif -->
+                @endif 
 
                 <!-- Reports -->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('10', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('10', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-file-alt aiz-side-nav-icon"></i>
@@ -471,10 +471,10 @@
                             </li>
                         </ul>
                     </li>
-                @endif -->
+                @endif
                 
                 <!--Blog System-->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('23', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('23', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-bullhorn aiz-side-nav-icon"></i>
@@ -494,10 +494,10 @@
                             </li>
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 <!-- marketing -->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('11', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('11', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-bullhorn aiz-side-nav-icon"></i>
@@ -543,7 +543,7 @@
                             @endif
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 <!-- Support -->
                 @if(Auth::user()->user_type == 'admin' || in_array('12', json_decode(Auth::user()->staff->role->permissions)))
@@ -595,7 +595,7 @@
                 @endif
 
                 <!-- Affiliate Addon -->
-                <!-- @if (addon_is_activated('affiliate_system'))
+                 @if (addon_is_activated('affiliate_system'))
                     @if(Auth::user()->user_type == 'admin' || in_array('15', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -640,10 +640,10 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
                 <!-- Offline Payment Addon-->
-                <!-- @if (addon_is_activated('offline_payment'))
+                 @if (addon_is_activated('offline_payment'))
                     @if(Auth::user()->user_type == 'admin' || in_array('16', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -685,10 +685,10 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
                 <!-- Paytm Addon -->
-                <!-- @if (addon_is_activated('paytm'))
+                 @if (addon_is_activated('paytm'))
                     @if(Auth::user()->user_type == 'admin' || in_array('17', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -708,10 +708,10 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
                 <!-- Club Point Addon-->
-                <!-- @if (addon_is_activated('club_point'))
+                 @if (addon_is_activated('club_point'))
                     @if(Auth::user()->user_type == 'admin' || in_array('18', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -741,10 +741,10 @@
                             </ul>
                         </li>
                     @endif
-                @endif -->
+                @endif
 
                 <!--OTP addon -->
-                <!-- @if (addon_is_activated('otp_system'))
+                 @if (addon_is_activated('otp_system'))
                     @if(Auth::user()->user_type == 'admin' || in_array('19', json_decode(Auth::user()->staff->role->permissions)))
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
@@ -804,7 +804,7 @@
                 @endif -->
 
                 <!-- Website Setup -->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('13', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('13', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link {{ areActiveRoutes(['website.footer', 'website.header'])}}" >
                             <i class="las la-desktop aiz-side-nav-icon"></i>
@@ -834,7 +834,7 @@
                             </li>
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 <!-- Setup & Configurations -->
                 @if(Auth::user()->user_type == 'admin' || in_array('14', json_decode(Auth::user()->staff->role->permissions)))
@@ -872,7 +872,7 @@
                                     <span class="aiz-side-nav-text">{{translate('Vat & TAX')}}</span>
                                 </a>
                             </li>
-                            <!-- <li class="aiz-side-nav-item">
+                             <li class="aiz-side-nav-item">
                                 <a href="{{route('pick_up_points.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['pick_up_points.index','pick_up_points.create','pick_up_points.edit'])}}">
                                     <span class="aiz-side-nav-text">{{translate('Pickup point')}}</span>
                                 </a>
@@ -891,8 +891,8 @@
                                 <a href="{{ route('order_configuration.index') }}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{translate('Order Configuration')}}</span>
                                 </a>
-                            </li> -->
-                            <!-- <li class="aiz-side-nav-item">
+                            </li> 
+                             <li class="aiz-side-nav-item">
                                 <a href="{{ route('file_system.index') }}" class="aiz-side-nav-link">
                                     <span class="aiz-side-nav-text">{{translate('File System & Cache Configuration')}}</span>
                                 </a>
@@ -1024,7 +1024,7 @@
                             <span class="aiz-side-nav-text">{{translate('Pages')}}</span>
                             <span class="aiz-side-nav-arrow"></span>
                         </a>
-                        <!-- <ul class="aiz-side-nav-list level-2">
+                         <ul class="aiz-side-nav-list level-2">
                             <li class="aiz-side-nav-item">
                                 <a href="admin.faq" class="aiz-side-nav-link {{ areActiveRoutes(['staffs.index', 'staffs.create', 'staffs.edit'])}}">
                                     <span class="aiz-side-nav-text">{{translate('FAQS')}}</span>
@@ -1035,11 +1035,11 @@
                                     <span class="aiz-side-nav-text">{{translate('Terms and Condition')}}</span>
                                 </a>
                             </li>
-                        </ul> -->
+                        </ul>
                     </li>
                 @endif
 
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('24', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('24', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-user-tie aiz-side-nav-icon"></i>
@@ -1059,17 +1059,17 @@
                             </li>
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 <!-- Addon Manager -->
-                <!-- @if(Auth::user()->user_type == 'admin' || in_array('21', json_decode(Auth::user()->staff->role->permissions)))
+                 @if(Auth::user()->user_type == 'admin' || in_array('21', json_decode(Auth::user()->staff->role->permissions)))
                     <li class="aiz-side-nav-item">
                         <a href="{{route('addons.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['addons.index', 'addons.create'])}}">
                             <i class="las la-wrench aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{translate('Addon Manager')}}</span>
                         </a>
                     </li>
-                @endif -->
+                @endif 
             </ul><!-- .aiz-side-nav -->
         </div><!-- .aiz-side-nav-wrap -->
     </div><!-- .aiz-sidebar -->

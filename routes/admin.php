@@ -64,12 +64,13 @@ Route::controller(UpdateController::class)->group(function () {
 });
 
 
-Route::get('/faqs', [AdminController::class, 'faqs'])->name('admin.faq');
-Route::post('/saveTerms', [AdminController::class, 'saveTerms'])->name('saveTerm');
+
 Route::get('/terms_condition', [AdminController::class, 'terms_condition'])->name('admin.terms');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
     
     // category
+    Route::get('/faqs', [AdminController::class, 'faqs'])->name('admin.faqs');
+Route::post('/saveTerms', [AdminController::class, 'saveTerms'])->name('saveTerm');
     Route::get('/admin', [AdminController::class, 'admin_dashboard'])->name('admin.dashboard')->middleware(['auth', 'admin']);
     Route::resource('categories', CategoryController::class);
     Route::controller(CategoryController::class)->group(function () {

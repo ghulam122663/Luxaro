@@ -13,9 +13,12 @@ class ProductService
 {
     public function store(array $data)
     {
-       
+    
         $collection = collect($data);
+        // dd($collection["from_charter_side"]);
+        // dd(  $collection );
        
+        // dd(explode(',',$collection['tags'][0]));
         $approved = 1;
         if (auth()->user()->user_type == 'seller') {
             $user_id = auth()->user()->id;
@@ -26,11 +29,21 @@ class ProductService
             $user_id = User::where('user_type', 'admin')->first()->id;
         }
         $tags = array();
-        if ($collection['tags'][0] != null) {
-            foreach (json_decode($collection['tags'][0]) as $key => $tag) {
-                array_push($tags, $tag->value);
+        if(!empty($collection["from_charter_side"]))
+        {
+            foreach (explode(',',$collection['tags'][0]) as $key => $tag) {
+                array_push($tags, $tag);
             }
         }
+        else
+        {
+          if ($collection['tags'][0] != null) {
+                    foreach (json_decode($collection['tags'][0]) as $key => $tag) {
+                        array_push($tags, $tag->value);
+                    }
+                }
+        }
+        
         $delivery_option = $collection['delivery_option'];
         $shipping_type = $collection['shipping_type'];
         $collection['tags'] = implode(',', $tags);
@@ -38,12 +51,14 @@ class ProductService
         $collection['shipping_type'] = implode(',', $shipping_type);
         $discount_start_date = null;
         $discount_end_date   = null;
-        if ($collection['date_range'] != null) {
-            $date_var               = explode(" to ", $collection['date_range']);
-            $discount_start_date = strtotime($date_var[0]);
-            $discount_end_date   = strtotime($date_var[1]);
-        }
-        unset($collection['date_range']);
+    
+        // if ($collection['date_range'] != null) {
+        //     $date_var               = explode(" to ", $collection['date_range']);
+        //     $discount_start_date = strtotime($date_var[0]);
+        //     $discount_end_date   = strtotime($date_var[1]);
+        //     unset($collection['date_range']);
+        // }
+   
    
         // if ($collection['meta_title'] == null) {
         //     $collection['meta_title'] = $collection['name'];
@@ -126,10 +141,13 @@ class ProductService
         }
 
         $published = 1;
-        if ($collection['button'] == 'unpublish' || $collection['button'] == 'draft') {
-            $published = 0;
+        if(isset($collection['button'] ))
+        {
+            if ($collection['button'] == 'unpublish' || $collection['button'] == 'draft') {
+                $published = 0;
+            }
+            unset($collection['button']);
         }
-        unset($collection['button']);
 
         $data = $collection->merge(compact(
             'user_id',
@@ -143,7 +161,6 @@ class ProductService
             'attributes',
             'published',
         ))->toArray();
-
         return Product::create($data);
     }
 
@@ -195,8 +212,9 @@ class ProductService
             $date_var               = explode(" to ", $collection['date_range']);
             $discount_start_date = strtotime($date_var[0]);
             $discount_end_date   = strtotime($date_var[1]);
+            unset($collection['date_range']);
         }
-        unset($collection['date_range']);
+      
         
         // if ($collection['meta_title'] == null) {
         //     $collection['meta_title'] = $collection['name'];

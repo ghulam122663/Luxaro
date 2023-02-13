@@ -231,7 +231,7 @@
                                 required>
                         </div>
                     </div>
-
+<!-- 
                     <div class="form-group row">
                         <label class="col-md-3 control-label" for="start_date">{{translate('Discount Date Range')}}</label>
                         <div class="col-md-9">
@@ -251,8 +251,8 @@
                                 <option value="percent">{{translate('Percent')}}</option>
                             </select>
                         </div>
-                    </div>
-
+                    </div> -->
+                    
                     <div id="show-hide-div">
                         <div class="form-group row">
                             <label class="col-md-3 col-from-label">{{translate('Quantity')}}</label>
